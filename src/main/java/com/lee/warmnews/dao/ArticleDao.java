@@ -8,7 +8,7 @@ public interface ArticleDao {
 
     List<Article> getAllArticles();
 
-    void saveArticle(Article article);
+    void saveOrUpdateArticle(Article article);
 
     Article getArticleById(Long id);
 

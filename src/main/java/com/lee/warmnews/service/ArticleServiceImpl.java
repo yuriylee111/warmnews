@@ -30,14 +30,14 @@ public class ArticleServiceImpl implements ArticleService {
     public void saveArticle(Article article) {
         if (article.getId() == null) {
             article.setCreated(new Timestamp(System.currentTimeMillis()));
-            articleDao.saveArticle(article);
+            articleDao.saveOrUpdateArticle(article);
         } else {
             Article dbArticle = articleDao.getArticleById(article.getId());
             dbArticle.setTitle(article.getTitle());
             dbArticle.setBrief(article.getBrief());
             dbArticle.setContent(article.getContent());
             dbArticle.setUpdated(new Timestamp(System.currentTimeMillis()));
-            articleDao.saveArticle(dbArticle);
+            articleDao.saveOrUpdateArticle(dbArticle);
         }
     }
 

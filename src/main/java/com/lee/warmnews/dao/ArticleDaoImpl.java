@@ -20,7 +20,7 @@ public class ArticleDaoImpl implements ArticleDao {
     }
 
     @Override
-    public void saveArticle(Article article) {
+    public void saveOrUpdateArticle(Article article) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(article);
     }
