@@ -1,6 +1,7 @@
 package com.lee.warmnews.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 import java.util.Objects;
 
@@ -12,14 +13,22 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "title")
+    @Size(min = 2, max = 100)
     private String title;
+
     @Column(name = "brief")
+    @Size(min = 2, max = 500)
     private String brief;
+
     @Column(name = "content")
+    @Size(min = 2, max = 2048)
     private String content;
+
     @Column(name = "created")
     private Timestamp created;
+
     @Column(name = "updated")
     private Timestamp updated;
 

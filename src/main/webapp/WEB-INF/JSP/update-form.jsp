@@ -27,14 +27,17 @@
                 </c:url>
 
                 <p><label for="Title">Title</label></p>
+                <form:errors path="title" cssClass="error"/>
                 <form:textarea path="title" rows="4" cols="50"/>
                 <br/>
 
                 <p><label for="Brief">Brief</label></p>
+                <form:errors path="brief" cssClass="error"/>
                 <form:textarea path="brief" rows="8" cols="50"/>
                 <br/>
 
                 <p><label for="Content">Content</label></p>
+                <form:errors path="content" cssClass="error"/>
                 <form:textarea path="content" rows="16" cols="50"/>
                 <br/>
 
