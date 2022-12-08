@@ -1,6 +1,6 @@
 /* CSS Document orange*/
 body {
-    background: url('images/textur.png') rgb(54, 54, 54);
+    background: url("../images/textur.png") rgb(54, 54, 54);
     text-align: center;
     font-family: Tahoma, "Lucida Grande CE", lucida, sans-serif;
     font-size: 14px;
@@ -35,7 +35,7 @@ div#page {
 #header {
     width: 800px;
     height: 101px;
-    background: url('images/header.png') no-repeat rgb(240, 127, 32);
+    background: url("../images/header.png") no-repeat rgb(240, 127, 32);
     margin: 0;
 
 }
@@ -86,32 +86,12 @@ div#page {
     color: rgb(66, 66, 66)
 }
 
-.article .top .calendar {
-    width: 42px;
-    height: 47px;
-    float: left;
-    background: url('images/calendar.png') rgb(150, 150, 150);
-    text-align: center;
-    font-size: 9px;
-    padding: 2px 2px 0 0;
-    margin: 5px 8px 5px 0;
-    color: rgb(255, 255, 255);
-}
-
-.article .top .calendar span {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    color: rgb(66, 66, 66);
-    padding-top: 5px;
-}
-
 .article h2 {
     margin: 0;
     padding: 0;
     font-weight: normal;
     font-size: 23px;
-    background: url('images/border-headline.png') no-repeat bottom right;
+    background: url("../images/border-headline.png") no-repeat bottom right;
 }
 
 .article h2 a {
@@ -132,13 +112,11 @@ div#page {
     float: left;
     padding-left: 25px;
     margin-left: 5px;
-    background: url('images/category.png') no-repeat left;
 }
 
 .info .comments {
     float: right;
     padding-left: 25px;
-    background: url('images/comment.png') no-repeat left;
 }
 
 .info .category a, .info .comments a {
@@ -175,7 +153,7 @@ form#search {
     width: 36px;
     height: 28px;
     border: 0;
-    background: url('images/search.png') no-repeat;
+    background: url("../images/search.png") no-repeat;
     cursor: hand;
     cursor: pointer;
     margin: 0;
@@ -192,7 +170,7 @@ ul.categories {
 
 .categories li {
     border-bottom: 1px dashed rgb(177, 177, 177);
-    background: url('images/square.png') no-repeat left;
+    background: url("../images/square.png") no-repeat left;
     padding: 5px 0 2px 20px;
     list-style: none;
 }
@@ -218,14 +196,13 @@ ul.categories {
 ul.archive {
     margin: 3px;
     padding: 5px 0;
-    background: url('images/archive.png') repeat-y rgb(237, 152, 95);
+    background: url("../images/archive.png") repeat-y rgb(237, 152, 95);
 }
 
 .archive li {
     list-style: none;
     margin: 20px 5px 10px 20px;
     padding: 0 0 0 30px;
-    background: url('images/li-calendar.png') no-repeat left;
 }
 
 .archive li a {
@@ -249,7 +226,7 @@ ul.links {
 }
 
 .links li a {
-    background: url('images/square.png') no-repeat left;
+    background: url("../images/square.png") no-repeat left;
     padding-left: 20px;
     text-decoration: none;
     color: rgb(39, 39, 39)
@@ -264,7 +241,7 @@ ul.links {
     margin: 15px auto;
     margin-bottom: 0;
     padding: 10px 30px;
-    background: url('images/best-back.png') rgb(104, 104, 104);
+    background: url("../images/best-back.png") rgb(104, 104, 104);
     clear: both;
 }
 
@@ -285,7 +262,7 @@ ul.links {
     padding-left: 30px;
     list-style: none;
     font-size: 11px;
-    background: url('images/best-li.png') no-repeat 0 6px;
+    background: url("../images/best-li.png") no-repeat 0 6px;
 }
 
 * html #best ul li { /*IE6 only*/
