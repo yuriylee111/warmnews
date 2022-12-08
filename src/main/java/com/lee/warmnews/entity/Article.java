@@ -1,5 +1,7 @@
 package com.lee.warmnews.entity;
 
+import com.lee.warmnews.validation.BlackListWords;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.sql.Timestamp;
@@ -15,15 +17,18 @@ public class Article {
     private Long id;
 
     @Column(name = "title")
+    @BlackListWords(message = "Недопустимое слово в заголовке статьи!")
     @Size(min = 2, max = 100)
     private String title;
 
     @Column(name = "brief")
     @Size(min = 2, max = 500)
+    @BlackListWords
     private String brief;
 
     @Column(name = "content")
     @Size(min = 2, max = 2048)
+    @BlackListWords
     private String content;
 
     @Column(name = "created")
