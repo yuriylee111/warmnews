@@ -4,5 +4,5 @@ Spring MVC, Hibernate - CRUD
 
 Java configuration
 
-slf4j, logback
+AspectJ, Slf4j, Logback
 

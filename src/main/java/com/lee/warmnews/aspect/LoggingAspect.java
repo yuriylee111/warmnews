@@ -19,9 +19,19 @@ public class LoggingAspect {
 
         LOGGER.trace("Execution of {} started", methodName);
 
-        Object targetMethodResult = pjp.proceed();
+        Throwable toThrow = null;
+        Object targetMethodResult = null;
+        try {
+            targetMethodResult = pjp.proceed();
+        } catch (Throwable t) {
+            toThrow = t;
+        }
 
         LOGGER.trace("Execution of {} completed", methodName);
+
+        if (toThrow != null) {
+            throw toThrow;
+        }
 
         return targetMethodResult;
     }
