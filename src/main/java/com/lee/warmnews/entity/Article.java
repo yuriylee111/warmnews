@@ -17,7 +17,7 @@ public class Article {
     private Long id;
 
     @Column(name = "title")
-    @BlackListWords(message = "Недопустимое слово в заголовке статьи!")
+    @BlackListWords
     @Size(min = 2, max = 100)
     private String title;
 

@@ -6,6 +6,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import javax.servlet.Filter;
 
 public class DispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    private final static String SLASH_TEMPLATE = "/";
+    private final static String UTF_8 = "UTF-8";
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
@@ -18,11 +22,11 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/"};
+        return new String[]{SLASH_TEMPLATE};
     }
 
     @Override
     protected Filter[] getServletFilters() {
-        return new Filter[]{new CharacterEncodingFilter("UTF-8", true)};
+        return new Filter[]{new CharacterEncodingFilter(UTF_8, true)};
     }
 }

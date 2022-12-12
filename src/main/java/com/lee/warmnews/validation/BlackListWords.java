@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 )
 public @interface BlackListWords {
 
-    String message() default "Обнаружено запрещенное слово! Пожалуйста, не используйте его.";
+    String message() default "Forbidden word found! Please don't use it.";
 
     Class<?>[] groups() default {};
 

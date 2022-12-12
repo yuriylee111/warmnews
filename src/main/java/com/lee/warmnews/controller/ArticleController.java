@@ -16,6 +16,22 @@ import java.util.List;
 @Controller
 public class ArticleController {
 
+    private static final String ARTICLE = "article";
+    private static final String ALL_ARTICLES = "allArticles";
+
+    private static final String ALL_ARTICLES_FORM = "all-articles";
+    private static final String NEW_FORM = "new-form";
+    private static final String UPDATE_FORM = "update-form";
+    private static final String REDIRECT_SLASH_FORM = "redirect:/";
+
+    private static final String SLASH_TEMPLATE = "/";
+    private static final String SLASH_ADD_ARTICLE_TEMPLATE = "/addArticle";
+    private static final String SLASH_SAVE_ARTICLE_TEMPLATE = "/saveArticle";
+    private static final String SLASH_GET_ARTICLE_TEMPLATE = "/getArticle";
+    private static final String SLASH_DELETE_ARTICLE_TEMPLATE = "/deleteArticle";
+
+    private final static String ART_ID_TEMPLATE = "artId";
+
     private final ArticleService articleService;
 
     @Autowired
@@ -23,39 +39,39 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping(SLASH_TEMPLATE)
     public String viewAllArticles(Model model) {
-        List<Article> allArticles = articleService.getAllArticles();
-        model.addAttribute("allArticles", allArticles);
-        return "all-articles";
+        List<Article> allArticles = articleService.getAllArticles(); //TODO test
+        model.addAttribute(ALL_ARTICLES, allArticles); //TODO MockMVC
+        return ALL_ARTICLES_FORM;
     }
 
-    @RequestMapping("/addArticle")
+    @RequestMapping(SLASH_ADD_ARTICLE_TEMPLATE)
     public String addNewArticle(Model model) {
         Article article = new Article();
-        model.addAttribute("article", article);
-        return "new-form";
+        model.addAttribute(ARTICLE, article);
+        return NEW_FORM;
     }
 
-    @RequestMapping("/saveArticle")
-    public String saveArticle(@ModelAttribute("article") @Valid Article article, BindingResult bindingResult) {
+    @RequestMapping(SLASH_SAVE_ARTICLE_TEMPLATE)
+    public String saveArticle(@ModelAttribute(ARTICLE) @Valid Article article, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "update-form";
+            return UPDATE_FORM;
         }
         articleService.saveArticle(article);
-        return "redirect:/";
+        return REDIRECT_SLASH_FORM;
     }
 
-    @RequestMapping("/getArticle")
-    public String getArticleById(@RequestParam("artId") Long id, Model model) {
+    @RequestMapping(SLASH_GET_ARTICLE_TEMPLATE)
+    public String getArticleById(@RequestParam(ART_ID_TEMPLATE) Long id, Model model) {
         Article article = articleService.getArticleById(id);
-        model.addAttribute("article", article);
-        return "update-form";
+        model.addAttribute(ARTICLE, article);
+        return UPDATE_FORM;
     }
 
-    @RequestMapping("/deleteArticle")
-    public String deleteArticleById(@RequestParam("artId") Long id) {
+    @RequestMapping(SLASH_DELETE_ARTICLE_TEMPLATE)
+    public String deleteArticleById(@RequestParam(ART_ID_TEMPLATE) Long id) {
         articleService.deleteArticleById(id);
-        return "redirect:/";
+        return REDIRECT_SLASH_FORM;
     }
 }
