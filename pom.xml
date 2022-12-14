@@ -104,7 +104,6 @@
                     <version>3.0.0-M5</version>
                     <configuration>
                         <properties>
-                            <!-- https://junit.org/junit5/docs/5.5.1/api/org/junit/jupiter/api/Timeout.html -->
                             <configurationParameters>
                                 junit.jupiter.execution.timeout.default = 60
                                 junit.jupiter.execution.timeout.mode = disabled_on_debug

@@ -6,3 +6,5 @@ Java configuration
 
 AspectJ, Slf4j, Logback
 
+JUnit, Mockito, JaCoCo
+
